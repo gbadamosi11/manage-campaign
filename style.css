@@ -1,0 +1,45 @@
+        .modal-body {
+            height: 500px;
+            width: 900px;
+        }
+
+      
+        .modal-dialog {
+            height:500px;
+            width: 950px;
+        }
+      
+      
+        img {
+            float: left;
+            padding-left:20px;
+            height: 60px;
+            width: 100px;
+        }
+      
+
+        #topArea{
+            background-color: #fffdfd;
+            height: 500px; 
+        }
+      
+      
+        .btn1 {
+             top: 10px;
+             left: 1200px;
+             position: absolute;
+             background-color: #0090fc;
+             color: white;     
+        }
+
+      
+        body {
+            font-family:sans-serif;
+            font-size: 10pt;
+         }
+
+
+        #tableLine {
+            display: none
+
+         }
