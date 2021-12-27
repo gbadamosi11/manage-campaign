@@ -79,4 +79,3 @@ lga_el.onchange = function(el){
 
 }
 
-
