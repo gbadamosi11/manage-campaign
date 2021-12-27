@@ -72,7 +72,11 @@ const campaigns_body_el = document.getElementById('campaigns-body')
 
 const campaign = document.getElementById("add-campaign");
 const btn = document.querySelector(".btn");
-const span = document.querySelector(".close");
+const close = document.querySelector(".close");
+
+const button = document.querySelectorAll(".button");
+const hide = document.querySelectorAll(".hide");
+const content = document.querySelector(".popup-content");
 
 function populateDropDown(item_array, select_el, default_option='Select'){
     item_array.sort()
@@ -191,7 +195,7 @@ lga_el.onchange = function(el){
 btn.onclick = function() {
   campaign.style.display = "block";
 }
-span.onclick = function() {
+close.onclick = function() {
   campaign.style.display = "none";
 }
 window.onclick = function(event) {
@@ -199,3 +203,20 @@ window.onclick = function(event) {
     campaign.style.display = "none";
   }
 }
+
+// Accordion
+
+content.addEventListener('click', function(e){
+  const id = e.target.dataset.id;
+  if(id){
+            button.forEach(function(btn){
+                      btn.classList.remove('active');
+                      e.target.classList.add('active');
+            });
+            hide.forEach(function(article){
+                      article.classList.remove('active')
+            });
+            const element = document.getElementById(id);
+            element.classList.add('active');
+  };
+})
