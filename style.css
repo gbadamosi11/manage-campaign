@@ -19,9 +19,10 @@ body {
     width: 100%;
     background-color: #fff;
 }
-
+.container{
+    padding: .5rem;
+}
  .nav-container{
-     padding: .5rem;
      display: flex;
      flex-direction: row;
      align-items: center;
@@ -58,57 +59,47 @@ body {
     text-transform: capitalize;
 }
 /* main */
-.main-container{
-    padding: .5rem;
- }
- .search-input{
+ .search-campaign{
      border-radius: .4rem;
      font-size: .6rem;
-     margin-top: 1rem;
+     margin-top: 1.5rem;
      margin-bottom: 2rem;
      border: none;
      outline: none;
      padding: .5rem .3rem;
      width: 13rem;
  }
- .main-group div{
+ .campaigns-header{
      display: flex;
      justify-content: space-between;
- }
- .main-group div .main-heading{
      text-transform: uppercase;
-     font-size: .8rem;
-    padding: .5rem .5rem;
+     padding: .5rem;
  }
- .main-group div .main-heading:first-child{
-     width: 100%;
+ .campaigns-header h3{
+    font-size: .8rem;
  }
- .main-row{
-     display: flex;
-     flex-direction: column;
-     gap: .1rem;
-     margin: .1rem 0;
- }
- .main-col{
+
+ .campaigns-col{
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    margin: .1rem 0;
     padding: .3rem .5rem;
     background-color: #fff;
     border-radius: .4rem;
  }
- .main-box{
+ .campaigns-box{
      display: flex;
-     gap: .5rem;
+     justify-content: space-between;
      align-items: center;
-     width: 100%;
  }
- .main-box span{
+ .campaigns-box div{
      display: flex;
      align-items: center;
-     gap: .5rem;
-     width: 100%;
  }
- .main-box p{
-     font-size: .6rem;
- }
+ .campaigns-box span{
+    font-size: .6rem;
+}
 
  /* popup */
  .campaign-popup {
@@ -221,9 +212,9 @@ input, select{
 
 /* tablet */
  @media screen and (min-width: 600px){
-    .nav-container{
+     .container{
         padding: .8rem 2.5rem;
-    }
+     }
      .logo{
         font-size: 1.2rem;
      }
@@ -242,33 +233,26 @@ input, select{
     }
 
      /* main */
-     .main-container{
-        padding: .8rem 2.5rem;
-     }
-     .search-input{
+     .search-campaign{
          font-size: .7rem;
          width: 14rem;
      }
-     .main-group div .main-heading{
-         font-size: .9rem;
+     .campaigns-header{
         padding: .5rem 1rem;
+        font-size: .9rem;
      }
-     .main-group div .main-heading:first-child{
-         width: 50%;
+     .campaigns-header h3{
+        font-size: .9rem;
      }
-     .main-row{
-         margin: .2rem 0;
-     }
-     .main-col{
+     .campaigns-col{
+        margin: .2rem 0;
         padding: .3rem 1rem;
      }
-     .main-box{
+     .campaigns-box{
          justify-content: space-between;
      }
-     .main-box span{
-         width: 50%;
-     }
-     .main-box p{
+
+     .campaigns-box p{
          font-size: .8rem;
      }
 
@@ -345,9 +329,9 @@ input, select{
      #header{
          height: 100vh;
      }
-    .nav-container{
+     .container{
         padding: 1rem 10rem;
-    }
+     }
      .logo{
          font-size: 1.8rem;
      }
@@ -365,18 +349,15 @@ input, select{
         height: 5rem;
     }
      /* main */
-     .main-container{
-        padding: 2rem 10rem;
-     }
-     .search-input{
+     .search-campaign{
          font-size: .8rem;
-         margin-top: 0;
+         margin-top: 1rem;
          width: 15rem;
      }
-     .main-group div .main-heading{
-         font-size: 1rem;
+     .campaigns-header h3{
+        font-size: 1rem;
      }
-     .main-col{
+     .campaigns-col{
         padding: .3rem 2rem;
      }
 

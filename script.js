@@ -1,4 +1,6 @@
+
 const stateObject = {
+  
   Kano: {
     Nasarawa: ["Darkata", "Jirgiya", "Kawaji"],
     Fagge: ["Kwakwache", "Faggae A", "Faggae B"],
@@ -66,7 +68,6 @@ const states = Object.keys(stateObject);
 const states_el = document.getElementById('state')
 const lga_el = document.getElementById('lga')
 const ward_el = document.getElementById('ward')
-
 
 function populateDropDown(item_array, select_el, default_option='Select'){
     item_array.sort()
@@ -163,3 +164,19 @@ lga_el.onchange = function(el){
 
 }
 
+// popup
+
+const campaign = document.getElementById("campaign");
+const btn = document.querySelector(".btn");
+const span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  campaign.style.display = "block";
+}
+span.onclick = function() {
+  campaign.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == campaign) {
+    campaign.style.display = "none";
+  }
+}

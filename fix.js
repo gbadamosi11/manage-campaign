@@ -109,8 +109,6 @@ function readFormData() {
     return formData;
 }
 
-
-
 function insertNewRecord(data) {
     var table = document.getElementById("tableSpace").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
