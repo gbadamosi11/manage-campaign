@@ -98,12 +98,12 @@ body {
      align-items: center;
  }
  .campaigns-box span{
-     font-size: .6rem;
- }
+    font-size: .6rem;
+}
 
  /* popup */
  .campaign-popup {
-    /* display: none; */
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
