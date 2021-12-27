@@ -70,6 +70,10 @@ const lga_el = document.getElementById('lga')
 const ward_el = document.getElementById('ward')
 const campaigns_body_el = document.getElementById('campaigns-body')
 
+const campaign = document.getElementById("add-campaign");
+const btn = document.querySelector(".btn");
+const span = document.querySelector(".close");
+
 function populateDropDown(item_array, select_el, default_option='Select'){
     item_array.sort()
     select_el.innerHTML = ''
@@ -182,10 +186,6 @@ lga_el.onchange = function(el){
 }
 
 // popup
-
-const campaign = document.getElementById("campaign");
-const btn = document.querySelector(".btn");
-const span = document.getElementsByClassName("close")[0];
 btn.onclick = function() {
   campaign.style.display = "block";
 }
