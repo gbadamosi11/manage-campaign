@@ -1,4 +1,5 @@
 const stateObject = {
+  
   Kano: {
     Nasarawa: ["Darkata", "Jirgiya", "Kawaji"],
     Fagge: ["Kwakwache", "Faggae A", "Faggae B"],
@@ -29,26 +30,3 @@ const stateObject = {
   },
 
 };
-
-var campaign = document.getElementById("campaign");
-
-var btn = document.querySelector(".btn");
-
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  campaign.style.display = "block";
-}
-span.onclick = function() {
-  campaign.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == campaign) {
-    campaign.style.display = "none";
-  }
-}
-
-// function states(states){
-//     states.foreach(){
-
-//     }
-// }

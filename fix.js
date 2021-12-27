@@ -110,7 +110,22 @@ function readFormData() {
 }
 
 
+var campaign = document.getElementById("campaign");
 
+var btn = document.querySelector(".btn");
+
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  campaign.style.display = "block";
+}
+span.onclick = function() {
+  campaign.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == campaign) {
+    campaign.style.display = "none";
+  }
+}
 function insertNewRecord(data) {
     var table = document.getElementById("tableSpace").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
