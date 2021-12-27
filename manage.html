@@ -14,69 +14,45 @@
 
         <!-- nav -->
         <nav class="nav">
-            <div class="nav-container">
+            <div class="container nav-container">
                 <h3 class="logo">Manage Campaigns</h3>
                 <button type="button" class="btn" data-toggle="modal" data-target="#myModal" class="button">Add Campaign</button>
             </div>
         </nav>
         <!-- nav-end -->
-        <main id="main">
-            <div class="main-container">
-                <input type="text" class="search-input" placeholder="Search Campaign">
-                <div class="main-group">
-                    <div>
-                        <h3 class="main-heading">campaign name</h3>
-                        <h3 class="main-heading">type</h3>
-                        <h3 class="main-heading">status</h3>
-                    </div>
-                    <div class="main-row">
-                        <div class="main-col">
-                            <div class="main-box">
-                                <span>
-                                    <input type="radio">
-                                    <p class="name">Mike Emmanuel</p>
-                                    <p class="date">25/7/2015</p>
-                                </span>
-                                <p class="type">Rountine</p>
-                                <p class="status">Ongoing</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-row">
-                        <div class="main-col">
-                            <div class="main-box">
-                                <span>
-                                    <input type="radio">
-                                    <p class="name">Mike Emmanuel</p>
-                                    <p class="date">25/7/2015</p>
-                                </span>
-                                <p class="type">Rountine</p>
-                                <p class="status">Ongoing</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-row">
-                        <div class="main-col">
-                            <div class="main-box">
-                                <span>
-                                    <input type="radio">
-                                    <p class="name">Mike Emmanuel</p>
-                                    <p class="date">25/7/2015</p>
-                                </span>
-                                <p class="type">Rountine</p>
-                                <p class="status">Ongoing</p>
-                            </div>
+        
+        <div class="container">
+            <input type="text" class="search-campaign" placeholder="Search Campaign"> 
+            <div class="campaigns">
+                <div class="campaigns-header">
+                    <h3 class="main-heading">campaign name</h3>
+                    <h3 class="main-heading">type</h3>
+                    <h3 class="main-heading">status</h3>
+                </div>
+                <div class="campaigns-body">
+                    <div class="campaigns-col">
+                        <div class="campaigns-box">
+                            <span>
+                                <input type="radio">
+                                &nbsp;
+                                <span class="name">Mike Emmanuel</span>
+                                <span class="date">25/7/2015</span>
+                            </span>
+                            <span class="type">Rountine</span>
+                            <span class="status">Ongoing</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+
+        </div>
+        
 
     </header>
     <!-- header end -->
 
     <!-- campaigns popup -->
-    <div id="campaign" class="campaign-popup">
+    <div id="add-campaign" class="campaign-popup">
 
         <div class="popup-content">
             <!-- popup nav -->
@@ -118,21 +94,19 @@
                 <div class="location-container">
                     <div>
                         <p>State</p>
-                        <select name="state"class="location-input">
-                            <option value="">State</option>
-                            <option value="">Abia</option>
+                        <select name="state" class="location-input" id="state">
+                            <option>State</option>
                         </select>
                     </div>
                     <div>
                         <p>LGA</p>
-                        <select name="LGA"class="location-input">
-                            <option value="">LGA</option>
-                            <option value="">Ifelodun</option>
+                        <select name="lga" class="location-input" id="lga">
+                            <option>LGA</option>
                         </select>
                     </div>
                     <div>
                         <p>Ward</p>
-                        <select name="Ward"class="location-input">
+                        <select name="ward" class="location-input" id="ward">
                             <option value="">Ward</option>
                             <option value="">Ward C</option>
                         </select>
@@ -172,6 +146,7 @@
         </div>
       
     </div>
+    
     <script src="script.js"></script> 
 </body>
 
