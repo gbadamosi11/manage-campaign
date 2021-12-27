@@ -68,6 +68,7 @@ const states = Object.keys(stateObject);
 const states_el = document.getElementById('state')
 const lga_el = document.getElementById('lga')
 const ward_el = document.getElementById('ward')
+const campaigns_body_el = document.getElementById('campaigns-body')
 
 function populateDropDown(item_array, select_el, default_option='Select'){
     item_array.sort()
@@ -90,6 +91,22 @@ function populateDropDown(item_array, select_el, default_option='Select'){
 function initCampaigns(campaigns){
   campaigns.forEach(campaign => {
     console.log(campaign)
+
+    campaign_content = `<div class="campaign">
+        <div class="campaign-box">
+            <span>
+                <input type="radio">
+                &nbsp;
+                <span class="name">Mike Emmanuel</span>
+                <span class="date">25/7/2015</span>
+            </span>
+            <span class="type">Rountine</span>
+            <span class="status">Ongoing</span>
+        </div>
+    </div>`
+
+    campaigns_body_el.insertAdjacentHTML('beforeend', campaign_content)
+
   });
 }
 
