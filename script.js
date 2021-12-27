@@ -30,6 +30,37 @@ const stateObject = {
 
 };
 
+let campaigns = [
+  {
+    id: 1,
+    name: 'Kano campaign',
+    type: 'Routine Immunization',
+    startDate: '12/27/2021',
+    endDate: '12/31/2021',
+    location: {
+      state: 'Kano',
+      lga: 'Kano LGA',
+      ward: 'KANO LGA Ward',
+    },
+    strategy: 'Use Mobile session',
+    status: 'failed'
+  },
+  {
+    id: 1,
+    name: 'Kano campaign',
+    type: 'Routine Immunization',
+    startDate: '12/27/2021',
+    endDate: '12/31/2021',
+    location: {
+      state: 'Kano',
+      lga: 'Kano LGA',
+      ward: 'KANO LGA Ward',
+    },
+    strategy: 'Use Mobile session',
+    status: 'failed'
+  }
+]
+
 const states = Object.keys(stateObject);
 
 const states_el = document.getElementById('state')
@@ -55,11 +86,21 @@ function populateDropDown(item_array, select_el, default_option='Select'){
 
 }
 
+function initCampaigns(campaigns){
+  campaigns.forEach(campaign => {
+    console.log(campaign)
+  });
+}
+
+
 window.onload = function(){
 
   populateDropDown(states, states_el, 'State')
   lga_el.innerHTML = ''
   ward_el. innerHTML = ''
+
+
+  initCampaigns(campaigns)
 
 }
 
