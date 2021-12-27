@@ -75,60 +75,69 @@
             </div>
             <!-- popup form end -->
 
-            <!-- popup location -->
-            <div class="popup-location">
-                <h2>Location</h2>
-                <div class="location-container">
-                    <div>
-                        <p>State</p>
-                        <select name="state" class="location-input" id="state">
-                            <option>State</option>
-                        </select>
-                    </div>
-                    <div>
-                        <p>LGA</p>
-                        <select name="lga" class="location-input" id="lga">
-                            <option>LGA</option>
-                        </select>
-                    </div>
-                    <div>
-                        <p>Ward</p>
-                        <select name="ward" class="location-input" id="ward">
-                            <option value="">Ward</option>
-                            <option value="">Ward C</option>
-                        </select>
-                    </div>
+            <div id="popup-accordion">
+                <div class="btn-container">
+                    <button class="tab-btn active" data-id="location">Location</button>
+                    <button class="tab-btn" data-id="strategy">Strategy</button>
+                </div>
+                <div class="popup-content">
+                        <!-- popup location -->
+                        <div class="popup-location">
+                            <h2>Location</h2>
+                            <div class="location-container">
+                                <div>
+                                    <p>State</p>
+                                    <select name="state" class="location-input" id="state">
+                                        <option>State</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <p>LGA</p>
+                                    <select name="lga" class="location-input" id="lga">
+                                        <option>LGA</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <p>Ward</p>
+                                    <select name="ward" class="location-input" id="ward">
+                                        <option value="">Ward</option>
+                                        <option value="">Ward C</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- popup location end -->
+
+                        <!-- popup strategy -->
+                        <div class="popup-strategy">
+                            <h2>Strategy</h2>
+                            <div class="strategy-container">
+                                <div class="strategy-info">
+                                    <input type="radio">
+                                    <span>
+                                        <h3>Use Fixed Post</h3>
+                                        <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
+                                    </span>
+                                </div>
+                                <div class="strategy-info">
+                                    <input type="radio">
+                                    <span>
+                                        <h3>Use Fixed Post</h3>
+                                        <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
+                                    </span>
+                                </div>
+                                <div class="strategy-info">
+                                    <input type="radio">
+                                    <span>
+                                        <h3>Use Fixed Post</h3>
+                                        <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- popup strategy end-->
                 </div>
             </div>
-            <!-- popup location end -->
-            <!-- popup strategy -->
-            <div class="popup-strategy">
-                <h2>Strategy</h2>
-                <div class="strategy-container">
-                    <div class="strategy-info">
-                        <input type="radio">
-                        <span>
-                            <h3>Use Fixed Post</h3>
-                            <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
-                        </span>
-                    </div>
-                    <div class="strategy-info">
-                        <input type="radio">
-                        <span>
-                            <h3>Use Fixed Post</h3>
-                            <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
-                        </span>
-                    </div>
-                    <div class="strategy-info">
-                        <input type="radio">
-                        <span>
-                            <h3>Use Fixed Post</h3>
-                            <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <!-- popup strategy end-->
             <button type="button" class="save-btn" id="save" >Save</button>
         </div>
       
