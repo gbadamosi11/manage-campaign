@@ -47,8 +47,8 @@ window.onclick = function(event) {
   }
 }
 
-function states(states){
-    states.foreach(){
+// function states(states){
+//     states.foreach(){
 
-    }
-}
+//     }
+// }
