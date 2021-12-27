@@ -52,7 +52,7 @@ let campaigns = [
     name: 'Kano campaign',
     type: 'Routine Immunization',
     startDate: '12/27/2021',
-    endDate: '12/31/2021',
+    endDate: '12/15/2021',
     location: {
       state: 'Kano',
       lga: 'Kano LGA',
@@ -97,16 +97,16 @@ function initCampaigns(campaigns){
     console.log(campaign)
 
     campaign_content = `
-                        <div class="campaign">
+                        <div class="campaign" data-id="${campaign['id']}">
                             <div class="campaign-box">
                                 <span>
                                     <input type="radio">
                                     &nbsp;
-                                    <span class="name">Mike Emmanuel</span>
-                                    <span class="date">25/7/2015</span>
+                                    <span class="name">${campaign['name']}</span>
+                                    <span class="date">${campaign['startDate']}</span>
                                 </span>
-                                <span class="type">Rountine</span>
-                                <span class="status">Ongoing</span>
+                                <span class="type">${campaign['type']}</span>
+                                <span class="status ${ campaignStatus(campaign) }">${ campaignStatus(campaign) }</span>
                             </div>
                         </div>
                         `
@@ -136,6 +136,19 @@ function updateCampaign(campaign_id, data){
     campaigns[campaign_index][key] = data[key]
   })
 
+}
+
+function campaignStatus(campaign){
+  today = new Date();
+  end_date = new Date(campaign['endDate'])
+  status = ''
+  done_statuses = ['success', 'failed']
+  if(today.getTime() > end_date.getTime()){
+    return done_statuses[Math.floor(Math.random()*done_statuses.length)];
+  }else{
+    return 'ongoing'
+  }
+  
 }
 
 
