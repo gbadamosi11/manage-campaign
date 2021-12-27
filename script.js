@@ -46,7 +46,7 @@ let campaigns = [
     status: 'failed'
   },
   {
-    id: 1,
+    id: 2,
     name: 'Kano campaign',
     type: 'Routine Immunization',
     startDate: '12/27/2021',
@@ -92,6 +92,30 @@ function initCampaigns(campaigns){
   });
 }
 
+function addCampaign(campaign){
+  campaign['id'] = campaigns[campaigns.length - 1]['id'] + 1
+  campaigns.push(campaign)
+}
+
+function deleteCampaign(campaign_id, multiple=false){
+  campaigns =  campaigns.filter(campaign => {
+      return multiple == true ? campaign_id.includes(campaign['id']) : campaign['id'] != campaign_id;
+  }); 
+}
+
+function updateCampaign(campaign_id, data){
+  campaign_index =  campaigns.findIndex(campaign => {
+      return campaign['id'] == campaign_id;
+  });
+
+  Object.keys(data).forEach(key => {
+    campaigns[campaign_index][key] = data[key]
+  })
+
+}
+
+
+
 
 window.onload = function(){
 
@@ -101,6 +125,25 @@ window.onload = function(){
 
 
   initCampaigns(campaigns)
+
+  addCampaign({
+    id: 2,
+    name: 'Kano campaign',
+    type: 'Routine Immunization',
+    startDate: '12/27/2021',
+    endDate: '12/31/2021',
+    location: {
+      state: 'Kano',
+      lga: 'Kano LGA',
+      ward: 'KANO LGA Ward',
+    },
+    strategy: 'Use Mobile session',
+    status: 'failed'
+  });
+
+  deleteCampaign(2)
+
+  console.log(campaigns);
 
 }
 
