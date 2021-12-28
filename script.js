@@ -72,11 +72,7 @@ const campaigns_body_el = document.getElementById('campaigns-body')
 
 const campaign = document.getElementById("add-campaign");
 const btn = document.querySelector(".btn");
-<<<<<<< HEAD
-const close = document.querySelector(".close-btn");
-=======
-const close_span = document.querySelector(".close");
->>>>>>> 7dcd2df4aeb54ff2357d50d2ae79d089ab6f4ddc
+const close_span = document.querySelector(".close-btn");
 
 const button = document.querySelectorAll(".button");
 const hide = document.querySelectorAll(".hide");
