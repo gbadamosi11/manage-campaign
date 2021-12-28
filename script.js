@@ -1,6 +1,5 @@
 
 const stateObject = {
-  
   Kano: {
     Nasarawa: ["Darkata", "Jirgiya", "Kawaji"],
     Fagge: ["Kwakwache", "Faggae A", "Faggae B"],
@@ -71,13 +70,16 @@ const ward_el = document.getElementById('ward')
 const campaigns_body_el = document.getElementById('campaigns-body')
 
 const campaign = document.getElementById("add-campaign");
-const btn = document.querySelector(".btn");
-const close_span = document.querySelector(".close-btn");
+const btnShowAddCampaignPopup = document.querySelector(".add-campaign-popup");
+const btnClosePopup = document.querySelector(".close-popup");
 
-const button = document.querySelectorAll(".button");
+const tabButtons = document.querySelectorAll(".tabs-buttons .tab-btn");
+const tabs = document.querySelectorAll(".tabs");
+
 const hide = document.querySelectorAll(".hide");
 const content = document.querySelector(".popup-content");
 const saveCampaign = document.getElementById("save-campaign");
+const addCampaignForm = document.getElementById("add-campaign-form");
 
 function populateDropDown(item_array, select_el, default_option='Select'){
     item_array.sort()
@@ -105,7 +107,6 @@ function initCampaigns(campaigns){
 
 function addCampaignToDom(campaign){
   
-
     campaign_content = `
                         <div class="campaign" data-id="${campaign['id']}">
                             <div class="campaign-box">
@@ -120,10 +121,7 @@ function addCampaignToDom(campaign){
                             </div>
                         </div>
                         `
-
     campaigns_body_el.insertAdjacentHTML('beforeend', campaign_content)
-
-  
 }
 
 function addCampaign(campaign){
@@ -152,13 +150,17 @@ function updateCampaign(campaign_id, data){
 function campaignStatus(campaign){
   today = new Date();
   end_date = new Date(campaign['endDate'])
+  start_date = new Date(campaign['startDate'])
+
   status = ''
   done_statuses = ['success', 'failed']
   if(today.getTime() > end_date.getTime()){
     return 'success';
     // return done_statuses[Math.floor(Math.random()*done_statuses.length)];
-  }else{
+  }else if(today.getTime() >= start_date.getTime() && today.getTime() <= end_date.getTime()){
     return 'ongoing'
+  }else{
+    return 'scheduled'
   }
   
 }
@@ -167,6 +169,7 @@ function campaignStatus(campaign){
 window.onload = function(){
 
   populateDropDown(states, states_el, 'State')
+
   lga_el.innerHTML = ''
   ward_el. innerHTML = ''
 
@@ -174,26 +177,55 @@ window.onload = function(){
   initCampaigns(campaigns)
 
   saveCampaign.onclick = function(){
-    alert("clicking");
-    addCampaign({
-      id: 2,
-      name: 'Kano campaign',
-      type: 'Routine Immunization',
-      startDate: '12/27/2021',
-      endDate: '12/31/2021',
-      location: {
-        state: 'Kano',
-        lga: 'Kano LGA',
-        ward: 'KANO LGA Ward',
-      },
-      strategy: 'Use Mobile session',
-      status: 'failed'
-    });
+    
+    
+    let form_data = Object.fromEntries(new FormData(addCampaignForm).entries());
+    console.log(form_data)
+
+    new_campaign_data = {
+        name: form_data['name'],
+        type: form_data['type'],
+        startDate: form_data['name'],
+        endDate: form_data['name'],
+        location: {
+          state: form_data['state'],
+          lga: form_data['lga'],
+          ward: form_data['ward'],
+        },
+        strategy: form_data['strategy'],
+        
+      }
+
+    addCampaign(new_campaign_data);
   
   }
-  
 
-  console.log(campaigns);
+  
+  // Accordion
+tabButtons.forEach(tabButton => {
+
+  tabButton.addEventListener('click', function(e){
+
+    let tab_id = e.target.dataset.id;
+    
+    tabButtons.forEach(tabButton => {
+      tabButton.classList.remove('active-btn')
+    })
+    e.target.classList.add('active-btn');
+
+    
+    tabs.forEach(tab => {
+      tab.classList.remove('active-tab')
+    })
+
+    selected_tab = document.getElementById(tab_id)
+    selected_tab.classList.add('active-tab')
+
+    
+  })
+
+}) 
+  
 
 }
 
@@ -214,30 +246,13 @@ lga_el.onchange = function(el){
 }
 
 // popup
-btn.onclick = function() {
+btnShowAddCampaignPopup.onclick = function() {
   campaign.style.display = "block";
 }
-close_span.onclick = function() {
+
+btnClosePopup.onclick = function() {
   campaign.style.display = "none";
 }
-window.onclick = function(event) {
-  if (event.target == campaign) {
-    campaign.style.display = "none";
-  }
-}
 
-// Accordion
-content.addEventListener('click', function(e){
-  const id = e.target.dataset.id;
-  if(id){
-      button.forEach(function(btn){
-          btn.classList.remove('active');
-          e.target.classList.add('active');
-      });
-      hide.forEach(function(article){
-            article.classList.remove('active')
-      });
-      const element = document.getElementById(id);
-      element.classList.add('active');
-  };
-})
+
+

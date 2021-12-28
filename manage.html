@@ -13,7 +13,7 @@
         <nav class="nav">
             <div class="container nav-container">
                 <h3 class="logo">Manage Campaigns</h3>
-                <button type="button" class="btn" data-toggle="modal" data-target="#myModal" class="button">Add Campaign</button>
+                <button type="button" data-toggle="modal" class="add-campaign-popup">Add Campaign</button>
             </div>
         </nav>
         <!-- nav-end -->
@@ -50,89 +50,92 @@
             <!-- popup nav end -->
 
             <!-- popup form -->
-            <div class="popup-form">
-                <div>
-                    <p>Name</p>
-                    <input class="form-input" type="text" placeholder="Campaign Name" name="name">
+            <form action="#" id="add-campaign-form">
+                <div class="popup-form">
+                    <div>
+                        <p>Name</p>
+                        <input class="form-input" type="text" placeholder="Campaign Name" name="name">
+                    </div>
+                    <div>
+                        <p>Type</p>
+                        <select class="form-input" name="type" id="campaign-type">
+                            <option value="Campaign type 1">Campaign type 1</option>
+                            <option value="Campaign type 2">Campaign type 2</option>
+                            <option value="Campaign type 3">Campaign type 3</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p>Duration Start</p>
+                        <input class="form-input" type="date" placeholder="Start Date" name="startDate">
+                    </div>
+                    <div>
+                        <p>Duration End</p>
+                        <input class="form-input" type="date" placeholder="End Date" name="endDate">
+                    </div>
                 </div>
-                <div>
-                    <p>Type</p>
-                    <select class="form-input" name="type" id="campaign-type">
-                        <option value="Campaign type 1">Campaign type 1</option>
-                        <option value="Campaign type 2">Campaign type 2</option>
-                        <option value="Campaign type 3">Campaign type 3</option>
-                    </select>
-                </div>
-                <div>
-                    <p>Duration Start</p>
-                    <input class="form-input" type="date" placeholder="Start Date" name="startDate">
-                </div>
-                <div>
-                    <p>Duration End</p>
-                    <input class="form-input" type="date" placeholder="End Date" name="endDate">
-                </div>
-            </div>
-            <!-- popup form end -->
+                <!-- popup form end -->
 
-            <!-- popup location -->
-            <div class="btn-container">
-                <button class="button active" data-id="location">location</button>
-                <button class="button" data-id="strategy">strategy</button>
-            </div>
-            <div id="location" class="popup-location hide active">
-                <div class="location-container">
-                    <div>
-                        <p>State</p>
-                        <select name="state" class="location-input" id="state" >
-                            <option>State</option>
-                        </select>
-                    </div>
-                    <div>
-                        <p>LGA</p>
-                        <select name="lga" class="location-input" id="lga">
-                            <option>LGA</option>
-                        </select>
-                    </div>
-                    <div>
-                        <p>Ward</p>
-                        <select name="ward" class="location-input" id="ward">
-                            <option value="">Ward</option>
-                        </select>
-                    </div>
+                <!-- popup location -->
+                <div class="tabs-buttons">
+                    <button class="btn tab-btn" data-id="location">location</button>
+                    <button class="btn tab-btn" data-id="strategy">strategy</button>
                 </div>
-            </div>
-            <!-- popup location end -->
 
-            <!-- popup strategy -->
-            <div id="strategy" class="popup-strategy hide">
-                <div class="strategy-container">
-                    <div class="strategy-info">
-                        <input type="radio" name="strategy" value="Use Fixed Post">
-                        <span>
-                            <h3>Use Fixed Post</h3>
-                            <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
-                        </span>
-                    </div>
-                    <div class="strategy-info">
-                        <input type="radio" name="strategy" value="Use Outreach Session">
-                        <span>
-                            <h3>Use Outreach Session</h3>
-                            <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
-                        </span>
-                    </div>
-                    <div class="strategy-info">
-                        <input type="radio" name="stretegy" value="Use Mobile Session">
-                        <span>
-                            <h3>Use Mobile Session</h3>
-                            <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
-                        </span>
+                <div id="location" class="tabs location active-tab">
+                    <div class="location-container">
+                        <div>
+                            <p>State</p>
+                            <select name="state" class="location-input" id="state" >
+                                <option>State</option>
+                            </select>
+                        </div>
+                        <div>
+                            <p>LGA</p>
+                            <select name="lga" class="location-input" id="lga">
+                                <option>LGA</option>
+                            </select>
+                        </div>
+                        <div>
+                            <p>Ward</p>
+                            <select name="ward" class="location-input" id="ward">
+                                <option value="">Ward</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- popup strategy end-->
+                <!-- popup location end -->
+
+                <!-- popup strategy -->
+                <div id="strategy" class="tabs strategy">
+                    <div class="strategy-container">
+                        <div class="strategy-info">
+                            <input type="radio" name="strategy" value="Use Fixed Post">
+                            <span>
+                                <h3>Use Fixed Post</h3>
+                                <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
+                            </span>
+                        </div>
+                        <div class="strategy-info">
+                            <input type="radio" name="strategy" value="Use Outreach Session">
+                            <span>
+                                <h3>Use Outreach Session</h3>
+                                <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
+                            </span>
+                        </div>
+                        <div class="strategy-info">
+                            <input type="radio" name="stretegy" value="Use Mobile Session">
+                            <span>
+                                <h3>Use Mobile Session</h3>
+                                <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- popup strategy end-->
+            </form>
 
             <div class="btn-container flex-end">
-                <button type="button" class="close-btn">Cancle</button>
+                <button type="button" class="close-popup">Cancle</button>
                 <button type="button" class="save-btn" id="save-campaign" >Save</button>
             </div>
         </div>
