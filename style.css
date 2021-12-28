@@ -203,25 +203,28 @@ input, select{
     margin-top: 2rem;
     justify-content: flex-end;
 }
-.btn-container{
+.btn-container, .button-container{
     display: flex;
     gap: 1.5rem;
 }
+.button-container{
+    border-bottom: 1px solid #888;
+}
 .button{
     border: none;
+    border-radius: 0;
     background-color: transparent;
     color: #333;
     text-transform: capitalize;
     font-size: .9rem;
     display: block;
-    transition: all 0.2s linear;
 }
 .button:hover:not(.active) {
     border: none;
   }
   .button.active {
     width: 5rem;
-    border-bottom: 2px solid #588ee6;
+    border-bottom: 1.5px solid #588ee6;
   }
 
 .hide{
@@ -390,6 +393,12 @@ input, select{
      .campaigns-header h3{
         font-size: 1rem;
      }
+     .campaigns-header h3:first-child{
+         width: 30rem;
+     }
+     .campaign-box span:first-child{
+        width: 32rem;
+    }
      .campaign{
         padding: .3rem 2rem;
      }
@@ -397,6 +406,7 @@ input, select{
      /* popup */
     .popup-content {
         margin: 5rem auto;
+        padding: 2rem;
         width: 60%;
     }
     /* popup nav */
@@ -405,7 +415,11 @@ input, select{
     }  
     /* popup form*/
     .popup-form{
-        gap: 2rem;
+        gap: 1.5rem;
+    }
+    input[type=date]{
+        height: 1.6rem;
+        
     }
     /* popup location */
     .popup-location h2, .popup-strategy h2{
@@ -416,11 +430,5 @@ input, select{
     /* popup strategy */
     .strategy-container{
         gap: 2rem;
-    }
-    .strategy-info span h3{
-        font-size: .9rem;
-    }
-    .strategy-info p{
-        font-size: .8rem;
-    }
+    } 
  }
