@@ -90,11 +90,7 @@ body {
  }
  .campaign-box{
      display: flex;
-     justify-content: space-between;
-     align-items: center;
- }
- .campaign-box div{
-     display: flex;
+     justify-content: space-around;
      align-items: center;
  }
  .campaign-box span{
@@ -103,7 +99,7 @@ body {
 
  /* popup */
  .campaign-popup {
-    /* display: none; */
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -204,10 +200,17 @@ input, select{
 }
 
 /* save-btn */
-.save-btn{
+.save-btn, .close-btn{
     padding: .3rem 0;
     width: 5rem;
     font-size: .7rem;
+}
+.close-btn{
+    background-color: #888;
+}
+.flex-end{
+    margin-top: 2rem;
+    justify-content: flex-end;
 }
 .btn-container{
     display: flex;
@@ -220,20 +223,22 @@ input, select{
     text-transform: capitalize;
     font-size: .9rem;
 }
+
 .hide{
     display: none;
 }
-.active{
+ .active{
     display: block;
 }
 .ongoing{
     color: orange;
 }
-.complete{
+.success{
     color: green;
 }
 .failed{
     color: #fd1818;
+    width: 45px;
 }
 /* tablet */
  @media screen and (min-width: 600px){
@@ -316,9 +321,12 @@ input, select{
         font-size: 1rem;
     }
     /* save-btn */
-    .save-btn{
+    .save-btn, .close-btn{
         padding: .4rem 0;
         width: 7rem;
+    }
+    .close-btn{
+        background-color: #888;
     }
  }
 

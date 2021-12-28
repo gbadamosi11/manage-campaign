@@ -72,7 +72,7 @@ const campaigns_body_el = document.getElementById('campaigns-body')
 
 const campaign = document.getElementById("add-campaign");
 const btn = document.querySelector(".btn");
-const close = document.querySelector(".close");
+const close = document.querySelector(".close-btn");
 
 const button = document.querySelectorAll(".button");
 const hide = document.querySelectorAll(".hide");
@@ -156,8 +156,6 @@ function campaignStatus(campaign){
 }
 
 
-
-
 window.onload = function(){
 
   populateDropDown(states, states_el, 'State')
@@ -218,18 +216,17 @@ window.onclick = function(event) {
 }
 
 // Accordion
-
 content.addEventListener('click', function(e){
   const id = e.target.dataset.id;
   if(id){
-            button.forEach(function(btn){
-                      btn.classList.remove('active');
-                      e.target.classList.add('active');
-            });
-            hide.forEach(function(article){
-                      article.classList.remove('active')
-            });
-            const element = document.getElementById(id);
-            element.classList.add('active');
+      button.forEach(function(btn){
+          btn.classList.remove('active');
+          e.target.classList.add('active');
+      });
+      hide.forEach(function(article){
+            article.classList.remove('active')
+      });
+      const element = document.getElementById(id);
+      element.classList.add('active');
   };
 })
