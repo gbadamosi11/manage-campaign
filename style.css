@@ -8,11 +8,13 @@ body {
     background-color: #f5f6fa;
  }
  button{
+    cursor: pointer;
     background-color: #588ee6;
     border-radius: 4px;
     border: none;
     outline: none;
     color: #fff;
+    display: block;
  }
 
 .nav{
@@ -130,18 +132,7 @@ body {
     font-weight: 400;
     font-size: 1.2rem;
 }
-.close {
-    color: #333;
-    font-size: 2rem;
-    font-weight: bold;
-}
 
-.close:hover,
-.close:focus {
-    color: red;
-    text-decoration: none;
-    cursor: pointer;
-}
 .line{
     border: 1px solid #ccc;
     margin-top: .5rem;
@@ -222,7 +213,16 @@ input, select{
     color: #333;
     text-transform: capitalize;
     font-size: .9rem;
+    display: block;
+    transition: all 0.2s linear;
 }
+.button:hover:not(.active) {
+    border: none;
+  }
+  .button.active {
+    width: 5rem;
+    border-bottom: 2px solid #588ee6;
+  }
 
 .hide{
     display: none;
@@ -288,8 +288,6 @@ input, select{
 
      /* popup */
     .popup-content {
-        gap: 2rem;
-        margin: 2rem auto;
         width: 75%;
     }
     /* popup nav */
@@ -398,8 +396,7 @@ input, select{
 
      /* popup */
     .popup-content {
-        gap: 2rem;
-        margin: 2rem auto;
+        margin: 5rem auto;
         width: 60%;
     }
     /* popup nav */
@@ -427,14 +424,3 @@ input, select{
         font-size: .8rem;
     }
  }
-/* 
-#topArea{
-    background-color: #fffdfd;
-    height: 500px; 
-}
-
-
-
-#tableLine {
-    display: none
-} */
