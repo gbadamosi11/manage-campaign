@@ -185,8 +185,8 @@ window.onload = function(){
     new_campaign_data = {
         name: form_data['name'],
         type: form_data['type'],
-        startDate: form_data['name'],
-        endDate: form_data['name'],
+        startDate: form_data['startDate'],
+        endDate: form_data['endDate'],
         location: {
           state: form_data['state'],
           lga: form_data['lga'],
@@ -206,6 +206,8 @@ tabButtons.forEach(tabButton => {
 
   tabButton.addEventListener('click', function(e){
 
+    e.preventDefault()
+    
     let tab_id = e.target.dataset.id;
     
     tabButtons.forEach(tabButton => {
@@ -221,7 +223,8 @@ tabButtons.forEach(tabButton => {
     selected_tab = document.getElementById(tab_id)
     selected_tab.classList.add('active-tab')
 
-    
+    e.stopPropagation();
+
   })
 
 }) 
