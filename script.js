@@ -72,11 +72,16 @@ const campaigns_body_el = document.getElementById('campaigns-body')
 
 const campaign = document.getElementById("add-campaign");
 const btn = document.querySelector(".btn");
+<<<<<<< HEAD
 const close = document.querySelector(".close-btn");
+=======
+const close_span = document.querySelector(".close");
+>>>>>>> 7dcd2df4aeb54ff2357d50d2ae79d089ab6f4ddc
 
 const button = document.querySelectorAll(".button");
 const hide = document.querySelectorAll(".hide");
 const content = document.querySelector(".popup-content");
+const saveCampaign = document.getElementById("save-campaign");
 
 function populateDropDown(item_array, select_el, default_option='Select'){
     item_array.sort()
@@ -98,7 +103,12 @@ function populateDropDown(item_array, select_el, default_option='Select'){
 
 function initCampaigns(campaigns){
   campaigns.forEach(campaign => {
-    console.log(campaign)
+    addCampaignToDom(campaign)
+  });
+}
+
+function addCampaignToDom(campaign){
+  
 
     campaign_content = `
                         <div class="campaign" data-id="${campaign['id']}">
@@ -117,11 +127,12 @@ function initCampaigns(campaigns){
 
     campaigns_body_el.insertAdjacentHTML('beforeend', campaign_content)
 
-  });
+  
 }
 
 function addCampaign(campaign){
   campaign['id'] = campaigns[campaigns.length - 1]['id'] + 1
+  addCampaignToDom(campaign)
   campaigns.push(campaign)
 }
 
@@ -148,7 +159,8 @@ function campaignStatus(campaign){
   status = ''
   done_statuses = ['success', 'failed']
   if(today.getTime() > end_date.getTime()){
-    return done_statuses[Math.floor(Math.random()*done_statuses.length)];
+    return 'success';
+    // return done_statuses[Math.floor(Math.random()*done_statuses.length)];
   }else{
     return 'ongoing'
   }
@@ -165,22 +177,25 @@ window.onload = function(){
 
   initCampaigns(campaigns)
 
-  addCampaign({
-    id: 2,
-    name: 'Kano campaign',
-    type: 'Routine Immunization',
-    startDate: '12/27/2021',
-    endDate: '12/31/2021',
-    location: {
-      state: 'Kano',
-      lga: 'Kano LGA',
-      ward: 'KANO LGA Ward',
-    },
-    strategy: 'Use Mobile session',
-    status: 'failed'
-  });
-
-  deleteCampaign(2)
+  saveCampaign.onclick = function(){
+    alert("clicking");
+    addCampaign({
+      id: 2,
+      name: 'Kano campaign',
+      type: 'Routine Immunization',
+      startDate: '12/27/2021',
+      endDate: '12/31/2021',
+      location: {
+        state: 'Kano',
+        lga: 'Kano LGA',
+        ward: 'KANO LGA Ward',
+      },
+      strategy: 'Use Mobile session',
+      status: 'failed'
+    });
+  
+  }
+  
 
   console.log(campaigns);
 
@@ -206,7 +221,7 @@ lga_el.onchange = function(el){
 btn.onclick = function() {
   campaign.style.display = "block";
 }
-close.onclick = function() {
+close_span.onclick = function() {
   campaign.style.display = "none";
 }
 window.onclick = function(event) {
