@@ -123,6 +123,11 @@ body {
     border: 1px solid #888;
     width: 95%;
 }
+#add-campaign-form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 /* popup nav */
 .popup-nav{
     display: flex;
@@ -215,6 +220,7 @@ input, select{
     border-radius: 0;
     background-color: transparent;
     color: #333;
+    width: 5rem;
     text-transform: capitalize;
     font-size: .9rem;
     display: block;
@@ -228,7 +234,6 @@ input, select{
 }
 .active-btn{
     border-bottom: 2px solid #588ee6;
-    width: 5rem;
 }
 .ongoing{
     color: orange;
