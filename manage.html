@@ -56,21 +56,23 @@
             <div class="popup-form">
                 <div>
                     <p>Name</p>
-                    <input class="form-input" type="text" placeholder="Campaign Name">
+                    <input class="form-input" type="text" placeholder="Campaign Name" name="name">
                 </div>
                 <div>
                     <p>Type</p>
-                    <select class="form-input"t name="type" id="0">
-                        <option value="">Campaign type</option>
+                    <select class="form-input" name="type" id="campaign-type">
+                        <option value="Campaign type 1">Campaign type 1</option>
+                        <option value="Campaign type 2">Campaign type 2</option>
+                        <option value="Campaign type 3">Campaign type 3</option>
                     </select>
                 </div>
                 <div>
                     <p>Duration Start</p>
-                    <input class="form-input" type="date" placeholder="Start Date">
+                    <input class="form-input" type="date" placeholder="Start Date" name="startDate">
                 </div>
                 <div>
                     <p>Duration End</p>
-                    <input class="form-input" type="date" placeholder="End Date">
+                    <input class="form-input" type="date" placeholder="End Date" name="endDate">
                 </div>
             </div>
             <!-- popup form end -->
@@ -85,7 +87,7 @@
                 <div class="location-container">
                     <div>
                         <p>State</p>
-                        <select name="state" class="location-input" id="state">
+                        <select name="state" class="location-input" id="state" >
                             <option>State</option>
                         </select>
                     </div>
@@ -99,7 +101,6 @@
                         <p>Ward</p>
                         <select name="ward" class="location-input" id="ward">
                             <option value="">Ward</option>
-                            <option value="">Ward C</option>
                         </select>
                     </div>
                 </div>
@@ -111,23 +112,23 @@
                 <!-- <h2>Strategy</h2> -->
                 <div class="strategy-container">
                     <div class="strategy-info">
-                        <input type="radio">
+                        <input type="radio" name="strategy" value="Use Fixed Post">
                         <span>
                             <h3>Use Fixed Post</h3>
                             <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
                         </span>
                     </div>
                     <div class="strategy-info">
-                        <input type="radio">
+                        <input type="radio" name="strategy" value="Use Outreach Session">
                         <span>
-                            <h3>Use Fixed Post</h3>
+                            <h3>Use Outreach Session</h3>
                             <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
                         </span>
                     </div>
                     <div class="strategy-info">
-                        <input type="radio">
+                        <input type="radio" name="stretegy" value="Use Mobile Session">
                         <span>
-                            <h3>Use Fixed Post</h3>
+                            <h3>Use Mobile Session</h3>
                             <p>consectetur adipisicing elit. Velit accusantium autem quasi tempore. Soluta?</p>
                         </span>
                     </div>
