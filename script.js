@@ -35,7 +35,7 @@ let campaigns = [
   {
     id: 1,
     name: 'Kano campaign',
-    type: 'Routine Immunization',
+    type: 'Campaign type 3',
     startDate: '12/27/2021',
     endDate: '12/31/2021',
     location: {
@@ -49,7 +49,7 @@ let campaigns = [
   {
     id: 2,
     name: 'Kano campaign',
-    type: 'Routine Immunization',
+    type: 'Campaign type 3',
     startDate: '12/27/2021',
     endDate: '12/15/2021',
     location: {
@@ -80,6 +80,8 @@ const hide = document.querySelectorAll(".hide");
 const content = document.querySelector(".popup-content");
 const saveCampaign = document.getElementById("save-campaign");
 const addCampaignForm = document.getElementById("add-campaign-form");
+
+const formInput = document.querySelectorAll('.form-input, .location-input');
 
 function populateDropDown(item_array, select_el, default_option='Select'){
     item_array.sort()
@@ -196,11 +198,33 @@ window.onload = function(){
         
       }
 
+      
+  // form validation
+  validated = true;
+  [...formInput].every(input => {
+      if (input.value == "") {
+        validated = false;
+        return false;
+      }
+      return true
+  })
+  
+  if(validated){
     addCampaign(new_campaign_data);
+  }else{
+    alert("validation failed")
+  }
   
   }
 
-  
+  // // search function
+  // function search(e){
+  //   for(let i = 0; i < e.length; i++){
+      
+  //   }
+  // }
+
+
   // Accordion
 tabButtons.forEach(tabButton => {
 
@@ -219,9 +243,7 @@ tabButtons.forEach(tabButton => {
     })
 
     selected_tab = document.getElementById(tab_id)
-    selected_tab.classList.add('active-tab')
-
-    
+    selected_tab.classList.add('active-tab');
   })
 
 }) 
