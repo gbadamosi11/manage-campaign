@@ -199,22 +199,24 @@ window.onload = function(){
       }
 
       
-  // form validation
-  validated = true;
-  [...formInput].every(input => {
-      if (input.value == "") {
-        validated = false;
-        return false;
-      }
-      return true
-  })
+    // form validation
+    validated = true;
+    [...formInput].every(input => {
+        if (input.value == "") {
+          validated = false;
+          return false;
+        }
+        return true
+    })
   
-  if(validated){
-    addCampaign(new_campaign_data);
-  }else{
-    alert("validation failed")
-  }
-  
+    if(validated){
+      addCampaign(new_campaign_data);
+      formInput.forEach(input => {
+        input.value = '';
+    })
+    }else{
+      alert("validation failed")
+    }
   }
 
   // // search function
@@ -245,14 +247,10 @@ tabButtons.forEach(tabButton => {
     })
 
     selected_tab = document.getElementById(tab_id)
-<<<<<<< HEAD
-    selected_tab.classList.add('active-tab');
-=======
     selected_tab.classList.add('active-tab')
 
     e.stopPropagation();
 
->>>>>>> 7d7b99ec85e1b6446845fb285eb66ffa9e05f803
   })
 
 }) 
